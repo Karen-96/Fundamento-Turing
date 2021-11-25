@@ -9,8 +9,8 @@
 		</div>
 		<div class="card-body">
 			<h5 class="card-title">Bienvenidos !!</h5>
-			<p class="card-text">Para comenzar presione el botón configuración para cargar las reglas necesarias.</p>
-			<a href="{{route('turing.configuracion')}}" class="btn btn-primary">Configuración</a>
+			<p class="card-text"><i class="fas fa-arrow-down"></i> Para comenzar presione el botón configuración para cargar las reglas necesarias.</p>
+			<a href="{{route('turing.configuracion')}}" class="btn btn-primary"><i class="fas fa-cogs"></i> Configuración</a>
 		</div>
 	</div>
 </div>

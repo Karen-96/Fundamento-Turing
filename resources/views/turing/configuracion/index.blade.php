@@ -4,13 +4,13 @@
 <div class="container">
 	<div class="row">
 		<div class="col-12 col-md-6">
-			<h3>Configuración</h3>			
+			<h3><i class="fas fa-cogs"></i> Configuración</h3>			
 		</div>	
 	</div>
 	<hr>
 	<form action="{{route('turing.import.excel')}}" method="post" enctype="multipart/form-data">
 		@csrf
-		<label for="file" class="form-label h4">Reglas de Transición </label>
+		<label for="file" class="form-label h4"><i class="fas fa-ruler-combined"></i> Reglas de Transición </label>
 		<input type="file" id="file" {{-- name="file" --}} class="form-control" aria-describedby="archivo">
 		<div id="archivo" class="form-text">
 			Ingrese un archivo excel unicamente.
@@ -18,7 +18,7 @@
 		<hr>
 		<div class="row">
 			<div class="col">
-				<label for="file" class="form-label h4">Cinta </label>
+				<label for="file" class="form-label h4"><i class="fas fa-tape"></i> Cinta </label>
 				<input type="text" class="form-control" name="cinta" placeholder="">
 				<div id="archivo" class="form-text">
 					Inserta los elementos de la cinta 
@@ -32,16 +32,6 @@
 				</div>
 			</div> --}}
 		</div>
-
-
-
-
-
-		{{-- <label for="file" class="form-label h4">Cinta </label>
-		<input type="cinta" id="cinta" name="cinta" class="form-control" aria-describedby="archivo" required>
-		<div id="archivo" class="form-text">
-			Inserta los elementos de la cinta 
-		</div> --}}
 		<hr>
 		<div class="row">
 			<div class="col">
@@ -69,8 +59,8 @@
 
 		<div class="py-4"></div>
 		<div class="d-grid gap-2 d-md-flex justify-content-md-end">
-			<button type="submit" class="btn btn-primary">Ejecutar</button>
-			<a href="{{route('turing.presentacion')}}" class="btn btn-primary" type="button">Atrás</a>
+			<button type="submit" class="btn btn-success"><i class="fas fa-play"></i> Ejecutar</button>
+			<a href="{{route('turing.presentacion')}}" class="btn btn-secondary" type="button"><i class="fas fa-angle-left"></i> Atrás</a>
 		</div>		
 	</form>	
 </div>	
