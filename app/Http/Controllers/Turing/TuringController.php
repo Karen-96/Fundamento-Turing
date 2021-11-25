@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Controllers\Turing;
-
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use \Exception;
@@ -11,8 +10,6 @@ class TuringController extends Controller
 	public function presentacion(){
 		return view('turing.presentacion');
 	}
-
-
 
 	// public function index(){
 	//     return view('turing.index');
@@ -55,6 +52,7 @@ class TuringController extends Controller
 			1       0            x           r(derecha)         2
 		*/
 
+			/*Ejemplo 1: Cadenas que acepta de la forma 0^n1^n.^ (0011)*/
 			$reglas = [
 				1 =>[
 					'0' =>['x','r',2],
@@ -76,9 +74,23 @@ class TuringController extends Controller
 					'b'=>['b','r',5],
 				],
 			];
+			
+			/*
+			Ejemplo 2:
+			cinta: a,b,c,d* Acepta con el simbolo * */
 
+			// $reglas = [
+			// 	1=>[
+			// 		'a'=>['a','r',1],
+			// 		'b'=>['b','r',1],
+			// 		'c'=>['c','r',1],
+			// 		'd'=>['d','r',1],
+			// 		'*'=>['d','r',2],
 
-			/* Recorro la cinta y busco en las reglas el elemnto de la cinta, y muevo el cabezal dependiendo
+			// 	],
+			// ];
+
+			/* Recorro la cinta y busco en las reglas el elemento de la cinta, y muevo el cabezal dependiendo
 			de lo que esta defino en las reglas */
 			while ($salir){
 			// echo nl2br(" \n");
@@ -99,14 +111,11 @@ class TuringController extends Controller
 				$graficas[] = ["estado_actual"=>$estado_actual, "cinta"=>str_split($cinta), "posicion"=>$posicion, "estado_anterior"=> $estado_anterior];
 
 			/*Pregunto si el estado_actual es igual final del estado, si es
-			verdadero estonces sale del programa y muestra los datos*/
+			verdadero entonces sale del programa y muestra los datos*/
 			if ($estado_actual == $estado_final) {
 				$salir = false;
 				break;
 			}
-
-
-
 
 			try{
 				/* Traigo la regla que coincide con el elemento de la cinta */
